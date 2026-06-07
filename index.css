@@ -1,49 +1,224 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   TOP BANNER
+========================= */
+.top-banner{
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
 .navbar-custom{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 40px;
+    padding: 12px 50px;
     background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
+/* Logo */
 .logo img{
-    height: 60px;
+    height: 65px;
+    transition: .3s;
 }
 
+.logo img:hover{
+    transform: scale(1.05);
+}
+
+/* Menu Tengah */
 .nav-menu{
     display: flex;
     list-style: none;
-    gap: 35px;
+    gap: 40px;
     margin: 0;
     padding: 0;
+}
+
+.nav-menu li{
+    position: relative;
 }
 
 .nav-menu a{
     text-decoration: none;
     color: #000;
-    font-weight: 600;
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    transition: .3s;
 }
 
 .nav-menu a:hover{
-    color: #555;
+    color: #666;
 }
 
+/* Garis bawah saat hover */
+.nav-menu a::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: black;
+    left: 0;
+    bottom: -6px;
+    transition: .3s;
+}
+
+.nav-menu a:hover::after{
+    width: 100%;
+}
+
+/* =========================
+   BAGIAN KANAN
+========================= */
 .nav-right{
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 18px;
 }
 
+/* Search */
 .nav-right input{
+    width: 220px;
     border: none;
-    background: #f1f1f1;
+    background: #f3f3f3;
     padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 4px;
+    outline: none;
+    transition: .3s;
 }
 
+.nav-right input:focus{
+    background: #e8e8e8;
+}
+
+/* Icon */
 .nav-right a{
     color: #000;
     font-size: 22px;
+    transition: .3s;
+}
+
+.nav-right a:hover{
+    color: #666;
+    transform: scale(1.1);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero{
+    height: 80vh;
+    background: linear-gradient(
+        rgba(0,0,0,.4),
+        rgba(0,0,0,.4)
+    ),
+    url('foto/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content{
+    color: white;
+}
+
+.hero-content h1{
+    font-size: 60px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.hero-content p{
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.hero-content a{
+    display: inline-block;
+    padding: 12px 30px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.hero-content a:hover{
+    background: black;
+    color: white;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width: 992px){
+
+    .navbar-custom{
+        padding: 12px 20px;
+    }
+
+    .nav-menu{
+        gap: 20px;
+    }
+
+    .nav-right input{
+        width: 150px;
+    }
+
+    .hero-content h1{
+        font-size: 40px;
+    }
+}
+
+@media(max-width: 768px){
+
+    .navbar-custom{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-menu{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-right{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-right input{
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .hero-content h1{
+        font-size: 32px;
+    }
+
+    .hero-content p{
+        font-size: 16px;
+    }
 }
