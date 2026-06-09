@@ -1,4 +1,14 @@
 // =========================
+// NEXORA CARD
+// =========================
+const slider = document.querySelector('.product-scroll');
+
+slider.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    slider.scrollLeft += e.deltaY;
+});
+
+// =========================
 // NEXORA CAROUSEL
 // =========================
 
