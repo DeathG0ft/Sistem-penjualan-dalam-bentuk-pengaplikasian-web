@@ -233,13 +233,29 @@
 
 .carousel{
     overflow: hidden;
+    position: relative;
+}
+
+.carousel-item{
+    position: relative;
 }
 
 .carousel-item img{
     height: 85vh;
+    width: 100%;
     object-fit: cover;
 }
 
+/* Overlay Gelap */
+.carousel-item::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+}
+
+/* Efek Zoom */
 .carousel-item.active img{
     animation: zoomHero 8s ease-in-out;
 }
@@ -253,15 +269,119 @@
     }
 }
 
+/* Caption Produk */
+.custom-caption{
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    text-align: left;
+    max-width: 550px;
+    color: #fff;
+    z-index: 2;
+}
+
+.custom-caption h1{
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.custom-caption p{
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.custom-caption h4{
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* Tombol */
+.custom-caption .btn{
+    padding: 12px 28px;
+    font-weight: 600;
+    border-radius: 0;
+    transition: .3s;
+}
+
+.custom-caption .btn-dark:hover{
+    transform: translateY(-3px);
+}
+
+.custom-caption .btn-outline-light:hover{
+    background: #fff;
+    color: #000;
+}
+
+/* Panah Carousel */
 .carousel-control-prev,
 .carousel-control-next{
     opacity: 0;
     transition: .3s;
+    z-index: 3;
 }
 
 .carousel:hover .carousel-control-prev,
 .carousel:hover .carousel-control-next{
     opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px){
+
+    .carousel-item img{
+        height: 70vh;
+    }
+
+    .custom-caption h1{
+        font-size: 2.2rem;
+    }
+
+    .custom-caption p{
+        font-size: .95rem;
+    }
+
+    .custom-caption h4{
+        font-size: 1.2rem;
+    }
+
+    .custom-caption .btn{
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 576px){
+
+    .carousel-item img{
+        height: 60vh;
+    }
+
+    .custom-caption{
+        left: 5%;
+        right: 5%;
+    }
+
+    .custom-caption h1{
+        font-size: 1.8rem;
+    }
+
+    .custom-caption p{
+        display: none;
+    }
+
+    .custom-caption h4{
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .custom-caption .btn{
+        padding: 8px 16px;
+        font-size: .8rem;
+    }
 }
 
 /* =========================
