@@ -90,6 +90,108 @@
 }
 
 /* =========================
+   MEGA MENU DROPDOWN
+========================= */
+
+.dropdown{
+    position: relative;
+}
+
+.mega-menu{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    width: 700px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.12);
+
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease;
+
+    z-index: 999;
+}
+
+.dropdown:hover .mega-menu{
+    opacity: 1;
+    visibility: visible;
+    top: 120%;
+}
+
+.menu-column{
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-column h4{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: black;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+}
+
+.menu-column a{
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    margin: 6px 0;
+    transition: .3s;
+}
+
+.menu-column a:hover{
+    color: black;
+    padding-left: 8px;
+}
+
+/* Hilangkan garis bawah animasi di isi dropdown */
+.menu-column a::after{
+    display: none;
+}
+
+/* Responsive Mega Menu */
+@media(max-width:992px){
+
+    .mega-menu{
+        width: 95vw;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .menu-column{
+        min-width: 140px;
+    }
+}
+
+@media(max-width:768px){
+
+    .mega-menu{
+        position: static;
+        width: 100%;
+        transform: none;
+        box-shadow: none;
+        padding: 15px;
+        display: none;
+        flex-direction: column;
+    }
+
+    .dropdown:hover .mega-menu{
+        display: flex;
+    }
+}
+
+/* =========================
    RIGHT NAV
 ========================= */
 
