@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRIA — NEXORA OFFICIAL STORE</title>
+    <title>WANITA — NEXORA OFFICIAL STORE</title>
     <!-- Bootstrap 5 & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/foto/Black and White Modern Initial N Technology Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../assets/css/pria.css">
+    <link rel="shortcut icon" href="../assets/foto/Black and White Modern Initial N Technology Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/wanita.css"> <!-- Menggunakan base CSS yang sama -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
@@ -22,7 +22,7 @@
 
     <ul class="nav-menu">
         <li class="dropdown">
-            <a href="pria.html" class="active">PRIA</a>
+            <a href="pria.html">PRIA</a>
             <div class="mega-menu">
                 <div class="menu-column">
                     <h4>Sepatu</h4>
@@ -48,7 +48,7 @@
             </div>
         </li>
         <li class="dropdown">
-            <a href="wanita.html">WANITA</a>
+            <a href="wanita.html" class="active">WANITA</a>
             <div class="mega-menu">
                 <div class="menu-column">
                     <h4>Sepatu</h4>
@@ -138,13 +138,13 @@
     </div>
 </nav>
 
-<!-- HERO HERO BANNER (MODERN MINIMALIST) -->
-<div class="hero-category-banner">
+<!-- HERO BANNER (WOMEN EDITION) -->
+<div class="hero-category-banner" style="background-image: url('https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=1920&auto=format&fit=crop');">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <span class="hero-subtitle">NEXORA MEN PERFORMANCE</span>
-        <h1 class="hero-title">MEN'S COLLECTION</h1>
-        <p class="hero-desc">Didesain untuk pergerakan tanpa batas. Menghadirkan kombinasi material premium dan estetika urban modern.</p>
+        <span class="hero-subtitle">NEXORA WOMEN EMPOWER</span>
+        <h1 class="hero-title">WOMEN'S COLLECTION</h1>
+        <p class="hero-desc">Keseimbangan sempurna antara kekuatan, kenyamanan, dan gaya modern. Dirancang untuk menunjang performa aktif harian Anda tanpa batas.</p>
     </div>
 </div>
 
@@ -169,7 +169,7 @@
                     </div>
                     <div class="form-check custom-check">
                         <input class="form-check-input" type="checkbox" id="catPakaian">
-                        <label class="form-check-label" for="catPakaian">Pakaian & Jersey</label>
+                        <label class="form-check-label" for="catPakaian">Pakaian & Legging</label>
                     </div>
                     <div class="form-check custom-check">
                         <input class="form-check-input" type="checkbox" id="catAksesoris">
@@ -181,7 +181,7 @@
                 <div class="filter-group border-0">
                     <h6 class="filter-group-title">Urutkan Berdasarkan</h6>
                     <select class="form-select custom-select">
-                        <option selected>Rekomendasi / Terbaru</option>
+                        <option selected value="default">Rekomendasi / Terbaru</option>
                         <option value="1">Harga: Rendah ke Tinggi</option>
                         <option value="2">Harga: Tinggi ke Rendah</option>
                     </select>
@@ -192,102 +192,103 @@
         <!-- PRODUCT GRID -->
         <div class="col-lg-9">
             <div class="d-flex justify-content-between align-items-center mb-4 text-muted">
-                <small>Menampilkan 6 Produk Premium</small>
+                <small id="product-count">Menampilkan 6 Produk Premium</small>
             </div>
 
-            <div class="row g-4row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            <!-- Perbaikan kelas grid row + ID untuk manipulasi DOM JavaScript -->
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4" id="productGrid">
 
                 <!-- Card 1 -->
-                <div class="col">
+                <div class="col" data-category="sepatu" data-price="859000">
                     <div class="product-card">
                         <div class="card-img-wrapper">
-                            <img src="../assets/foto/NEXORA STRIDE PRO.png" alt="NEXORA Stride Pro">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600&auto=format&fit=crop" alt="NEXORA Aura Pulse">
                             <button class="wishlist-badge"><i class="bi bi-heart"></i></button>
                         </div>
                         <div class="card-info">
                             <span class="product-cat">SEPATU LARI</span>
-                            <h5 class="product-title">NEXORA STRIDE PRO</h5>
-                            <p class="product-price">Rp899.000</p>
+                            <h5 class="product-title">NEXORA AURA PULSE W</h5>
+                            <p class="product-price">Rp859.000</p>
                             <a href="#" class="btn-buy-now">Beli Sekarang</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="col">
+                <div class="col" data-category="sepatu" data-price="749000">
                     <div class="product-card">
                         <div class="card-img-wrapper">
-                            <img src="../assets/foto/NEXORA URBAN CLASSIC.png" alt="NEXORA Urban Classic">
+                            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=600&auto=format&fit=crop" alt="NEXORA Stella Pastel">
                             <button class="wishlist-badge"><i class="bi bi-heart"></i></button>
                         </div>
                         <div class="card-info">
                             <span class="product-cat">SNEAKERS</span>
-                            <h5 class="product-title">NEXORA URBAN CLASSIC</h5>
-                            <p class="product-price">Rp799.000</p>
+                            <h5 class="product-title">NEXORA STELLA PASTEL</h5>
+                            <p class="product-price">Rp749.000</p>
                             <a href="#" class="btn-buy-now">Beli Sekarang</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="col">
+                <div class="col" data-category="pakaian" data-price="220000">
                     <div class="product-card">
                         <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600&auto=format&fit=crop" alt="Kaos Running">
+                            <img src="https://images.unsplash.com/photo-1506152983158-b4a74a01c721?q=80&w=600&auto=format&fit=crop" alt="High Waist Legging">
                             <button class="wishlist-badge"><i class="bi bi-heart"></i></button>
                         </div>
                         <div class="card-info">
                             <span class="product-cat">PAKAIAN</span>
-                            <h5 class="product-title">KAOS RUNNING DRY-FIT</h5>
-                            <p class="product-price">Rp150.000</p>
+                            <h5 class="product-title">HIGH-WAISTED FLEX LEGGING</h5>
+                            <p class="product-price">Rp220.000</p>
                             <a href="#" class="btn-buy-now">Beli Sekarang</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="col">
+                <div class="col" data-category="pakaian" data-price="195000">
                     <div class="product-card">
                         <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=600&auto=format&fit=crop" alt="Jaket Hoodie">
+                            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600&auto=format&fit=crop" alt="Oversized Sport Tee">
                             <button class="wishlist-badge"><i class="bi bi-heart"></i></button>
                         </div>
                         <div class="card-info">
                             <span class="product-cat">PAKAIAN</span>
-                            <h5 class="product-title">ATHLETIC HOODIE BLACK</h5>
-                            <p class="product-price">Rp280.000</p>
+                            <h5 class="product-title">OVERSIZED SPORT TEE</h5>
+                            <p class="product-price">Rp195.000</p>
                             <a href="#" class="btn-buy-now">Beli Sekarang</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 5 -->
-                <div class="col">
+                <div class="col" data-category="sepatu" data-price="320000">
                     <div class="product-card">
                         <div class="card-img-wrapper">
-                            <img src="../assets/foto/NEXORA BLACK BOOM.png" alt="NEXORA Black Boom">
+                            <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?q=80&w=600&auto=format&fit=crop" alt="NEXORA Lite Training">
                             <button class="wishlist-badge"><i class="bi bi-heart"></i></button>
                         </div>
                         <div class="card-info">
                             <span class="product-cat">SEPATU CASUAL</span>
-                            <h5 class="product-title">NEXORA BLACK BOOM</h5>
-                            <p class="product-price">Rp250.000</p>
+                            <h5 class="product-title">NEXORA LITE TRAINING</h5>
+                            <p class="product-price">Rp320.000</p>
                             <a href="#" class="btn-buy-now">Beli Sekarang</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 6 -->
-                <div class="col">
+                <div class="col" data-category="aksesoris" data-price="125000">
                     <div class="product-card">
                         <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=600&auto=format&fit=crop" alt="Celana Tracker">
+                            <img src="https://images.unsplash.com/photo-1589363460779-cd717fc244ac?q=80&w=600&auto=format&fit=crop" alt="Sport Water Bottle">
                             <button class="wishlist-badge"><i class="bi bi-heart"></i></button>
                         </div>
                         <div class="card-info">
-                            <span class="product-cat">PAKAIAN</span>
-                            <h5 class="product-title">TRAINING TRACK PANTS</h5>
-                            <p class="product-price">Rp180.000</p>
+                            <span class="product-cat">AKSESORIS</span>
+                            <h5 class="product-title">MATTE SLEEK WATER BOTTLE</h5>
+                            <p class="product-price">Rp125.000</p>
                             <a href="#" class="btn-buy-now">Beli Sekarang</a>
                         </div>
                     </div>
@@ -332,6 +333,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/js/pria.js"></script>
+<script src="../assets/js/wanita.js"></script> <!-- Script khusus wanita -->
 </body>
 </html>
