@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        135deg,
+        #000000,
+        #111111,
+        #1f1f1f
+    );
+    padding: 40px 0; /* Memberi ruang jika form lebih panjang dari layar */
+}
+
+.home-btn {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.home-btn:hover {
+    background: white;
+    color: black;
+}
+
+.login-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    width: 440px; /* Sedikit diperlebar agar textarea proporsional */
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 0 40px rgba(0,0,0,.5);
+    animation: fadeIn 1s ease;
+}
+
+.logo-area {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.logo-area img {
+    width: 90px;
+    margin-bottom: 15px;
+}
+
+.logo-area h1 {
+    color: white;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.logo-area p {
+    color: #bbb;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #bbb;
+}
+
+/* Khusus untuk posisi ikon di kolom alamat (textarea) */
+.input-box.textarea-box i {
+    top: 20px;
+    transform: none;
+}
+
+.input-box input, .input-box textarea {
+    width: 100%;
+    padding: 14px 14px 14px 45px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    resize: none; /* Mencegah user mengubah ukuran manual */
+}
+
+.input-box input::placeholder, .input-box textarea::placeholder {
+    color: #aaa;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.options label {
+    color: #ddd;
+    cursor: pointer;
+}
+
+.login-btn {
+    width: 100%;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    background: white;
+    color: black;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255,255,255,.2);
+}
+
+.register {
+    margin-top: 20px;
+    text-align: center;
+    color: #ccc;
+}
+
+.register a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

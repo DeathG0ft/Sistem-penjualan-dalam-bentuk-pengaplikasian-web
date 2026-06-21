@@ -6,23 +6,23 @@
     scroll-behavior: smooth;
 }
 
-/* =========================
-   NAVBAR
-========================= */
-
+/* ==========================================
+   NAVBAR (STICKY WITH SMOOTH TRANSITION)
+   ========================================== */
 .navbar-custom{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 12px 50px;
-    background: rgba(255,255,255,.9);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 2px 8px rgba(0,0,0,.08);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1050;
     animation: slideDown .8s ease;
+    transition: all 0.3s ease;
 }
 
 @keyframes slideDown{
@@ -37,18 +37,17 @@
 }
 
 /* LOGO */
-
 .logo img{
-    height: 65px;
+    height: 55px;
+    object-fit: contain;
     transition: .4s ease;
 }
 
 .logo img:hover{
-    transform: scale(1.08) rotate(3deg);
+    transform: scale(1.05) rotate(2deg);
 }
 
-/* MENU */
-
+/* NAVIGATION MENU */
 .nav-menu{
     display: flex;
     list-style: none;
@@ -68,9 +67,12 @@
     font-weight: 700;
     letter-spacing: .5px;
     transition: .3s;
+    display: inline-block;
+    padding: 5px 0;
 }
 
-.nav-menu a:hover{
+.nav-menu a:hover,
+.nav-menu a.active{
     color: #555;
 }
 
@@ -81,18 +83,18 @@
     height: 2px;
     background: black;
     left: 0;
-    bottom: -6px;
+    bottom: -2px;
     transition: .3s;
 }
 
-.nav-menu a:hover::after{
+.nav-menu a:hover::after,
+.nav-menu a.active::after{
     width: 100%;
 }
 
-/* =========================
-   MEGA MENU DROPDOWN
-========================= */
-
+/* ==========================================
+   MEGA MENU ENGINE
+   ========================================== */
 .dropdown{
     position: relative;
 }
@@ -101,12 +103,13 @@
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(10px);
     background: white;
     width: 700px;
     padding: 30px;
-    border-radius: 15px;
+    border-radius: 12px;
     box-shadow: 0 15px 40px rgba(0,0,0,.12);
+    border: 1px solid #eeeeee;
 
     display: flex;
     justify-content: space-between;
@@ -115,14 +118,13 @@
     opacity: 0;
     visibility: hidden;
     transition: .3s ease;
-
     z-index: 999;
 }
 
 .dropdown:hover .mega-menu{
     opacity: 1;
     visibility: visible;
-    top: 120%;
+    transform: translateX(-50%) translateY(0);
 }
 
 .menu-column{
@@ -132,100 +134,86 @@
 }
 
 .menu-column h4{
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     margin-bottom: 12px;
     color: black;
     border-bottom: 2px solid #eee;
     padding-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .menu-column a{
     text-decoration: none;
-    color: #555;
-    font-size: 14px;
-    margin: 6px 0;
+    color: #666;
+    font-size: 13px;
+    margin: 5px 0;
     transition: .3s;
+    padding: 0;
 }
 
 .menu-column a:hover{
     color: black;
-    padding-left: 8px;
+    padding-left: 6px;
 }
 
-/* Hilangkan garis bawah animasi di isi dropdown */
+/* Reset border animasi link di dalam mega menu */
 .menu-column a::after{
-    display: none;
+    display: none !important;
 }
 
-/* Responsive Mega Menu */
-@media(max-width:992px){
-
-    .mega-menu{
-        width: 95vw;
-        left: 50%;
-        transform: translateX(-50%);
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .menu-column{
-        min-width: 140px;
-    }
-}
-
-@media(max-width:768px){
-
-    .mega-menu{
-        position: static;
-        width: 100%;
-        transform: none;
-        box-shadow: none;
-        padding: 15px;
-        display: none;
-        flex-direction: column;
-    }
-
-    .dropdown:hover .mega-menu{
-        display: flex;
-    }
-}
-
-/* =========================
-   RIGHT NAV
-========================= */
-
+/* ==========================================
+   UTILITIES NAV RIGHT (SEARCH & UTILITIES)
+   ========================================== */
 .nav-right{
     display: flex;
     align-items: center;
     gap: 18px;
 }
 
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    color: #666;
+    font-size: 14px;
+    pointer-events: none;
+}
+
 .nav-right input{
     width: 220px;
     border: 2px solid transparent;
     background: #f5f5f5;
-    padding: 10px 15px;
+    padding: 10px 15px 10px 38px;
     border-radius: 30px;
     outline: none;
+    font-size: 13px;
     transition: .4s;
 }
 
 .nav-right input:focus{
     border-color: #000;
     background: #fff;
-    transform: scale(1.03);
+    width: 250px;
 }
 
 .nav-right a{
     color: black;
     font-size: 22px;
     transition: .3s;
+    display: inline-block;
 }
 
 .nav-right a:hover{
-    transform: translateY(-4px) scale(1.15);
+    transform: translateY(-4px) scale(1.1);
 }
+
 
 /* =========================
    SECTION TITLE
@@ -580,33 +568,54 @@ h2::after{
     transform: scale(1.05);
 }
 
-/* =========================
-   FOOTER
-========================= */
-
+/* ==========================================
+   FOOTER (RICH DESIGN)
+   ========================================== */
 .footer{
-    background: #111;
-    color: white;
+    background: #111111;
+    color: #ffffff;
+    font-size: 14px;
 }
 
 .footer h5{
-    margin-bottom: 15px;
-    font-weight: bold;
+    margin-bottom: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-brand {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.footer-about {
+    color: #bbbbbb;
+    font-size: 13px;
+    line-height: 1.6;
 }
 
 .footer-link{
-    color: #bbb;
+    color: #bbbbbb;
     text-decoration: none;
-    transition: .3s;
+    font-size: 13px;
+    transition: .3s ease;
+    display: inline-block;
 }
 
 .footer-link:hover{
-    color: white;
-    padding-left: 8px;
+    color: #ffffff;
+    transform: translateX(5px);
 }
 
 .footer hr{
-    border-color: rgba(255,255,255,.2);
+    border-color: rgba(255,255,255,.15);
+}
+
+.footer-bottom {
+    font-size: 12px;
+    color: #888888;
 }
 
 /* =========================
