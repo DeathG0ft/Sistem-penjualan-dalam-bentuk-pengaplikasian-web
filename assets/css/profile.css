@@ -1,0 +1,269 @@
+/* =========================
+   PROFILE
+========================= */
+body{
+    background:#f5f5f5;
+    font-family:'Segoe UI', sans-serif;
+}
+
+.sidebar{
+    background:#efefef;
+    border-radius:15px;
+    overflow:hidden;
+    min-height:650px;
+}
+
+.sidebar-header{
+    padding:18px;
+    font-size:14px;
+    font-weight:700;
+}
+
+.sidebar-menu{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.sidebar-menu li a{
+    display:block;
+    padding:14px 18px;
+    color:#333;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+.sidebar-menu li a:hover{
+    background:#dcdcdc;
+}
+
+.sidebar-menu li a.active{
+    background:#4b4b4b;
+    color:white;
+}
+
+.card-box{
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+
+.card-header-custom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    font-size:20px;
+    font-weight:600;
+}
+
+.card-header-custom a{
+    color:#333;
+    text-decoration:none;
+    font-size:15px;
+}
+
+.info-row{
+    border-bottom:1px solid #eaeaea;
+    padding:16px 0;
+}
+
+.info-row:last-child{
+    border:none;
+}
+
+.info-row label{
+    display:block;
+    font-weight:500;
+    margin-bottom:3px;
+}
+
+.info-row span{
+    color:#666;
+    font-size:14px;
+}
+
+.empty-address{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.address-icon{
+    font-size:70px;
+    color:#d0d0d0;
+}
+
+.empty-address p{
+    color:#777;
+    margin-top:20px;
+}
+
+.btn-dark-custom{
+    background:#333;
+    color:white;
+    border:none;
+    padding:10px 25px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.btn-dark-custom:hover{
+    background:black;
+}
+
+@media(max-width:992px){
+
+    .sidebar{
+        min-height:auto;
+    }
+
+    .card-header-custom{
+        font-size:18px;
+    }
+
+}
+
+/* =========================
+   WALLET
+========================= */
+.wallet-card{
+    background: linear-gradient(135deg,#2d2d2d,#505050);
+    color:white;
+    border-radius:15px;
+    padding:30px;
+}
+
+.wallet-card h6{
+    opacity:.8;
+}
+
+.wallet-card h1{
+    font-size:40px;
+    margin:15px 0;
+    font-weight:700;
+}
+
+.wallet-actions{
+    display:flex;
+    gap:10px;
+}
+
+/* =========================
+   LACAK PESANAN
+========================= */
+/* Tracking */
+
+.tracking-search{
+    display:flex;
+    gap:10px;
+}
+
+.order-card{
+    padding:10px 0;
+}
+
+.tracking-timeline{
+    margin-top:20px;
+}
+
+.timeline-item{
+    display:flex;
+    gap:15px;
+    position:relative;
+    margin-bottom:25px;
+}
+
+.timeline-item .dot{
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#d3d3d3;
+    margin-top:5px;
+}
+
+.timeline-item.active .dot{
+    background:#198754;
+}
+
+.timeline-item p{
+    margin:0;
+    color:#777;
+    font-size:14px;
+}
+
+.timeline-item::before{
+    content:'';
+    position:absolute;
+    left:8px;
+    top:25px;
+    width:2px;
+    height:45px;
+    background:#d3d3d3;
+}
+
+.timeline-item:last-child::before{
+    display:none;
+}
+
+/* =========================
+   ULASAN
+========================= */
+/* Review */
+
+.review-item{
+    padding:20px 0;
+    border-bottom:1px solid #ececec;
+}
+
+.review-item:last-child{
+    border-bottom:none;
+}
+
+.review-product{
+    display:flex;
+    gap:20px;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.review-product img{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.review-product h5{
+    margin-bottom:5px;
+}
+
+.review-stars{
+    color:#ffc107;
+    font-size:18px;
+}
+
+.review-date{
+    color:#888;
+    font-size:14px;
+    margin-top:5px;
+}
+
+.review-text{
+    color:#555;
+    margin-left:110px;
+}
+
+@media(max-width:768px){
+
+    .review-product{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .review-text{
+        margin-left:0;
+    }
+
+}
