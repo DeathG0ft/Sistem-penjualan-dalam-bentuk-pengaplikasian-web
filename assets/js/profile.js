@@ -59,3 +59,96 @@ document.querySelectorAll(".review-item").forEach(item => {
     });
 
 });
+
+
+//ULASAN
+document.querySelectorAll(".review-item").forEach(item => {
+
+    item.addEventListener("click", () => {
+        console.log("Review dipilih");
+    });
+
+});
+
+//KARTU SAYA
+const btnTambahKartu =
+document.getElementById("btnTambahKartu");
+
+if(btnTambahKartu){
+
+    btnTambahKartu.addEventListener("click", () => {
+
+        alert("Fitur tambah kartu akan segera tersedia.");
+
+    });
+
+}
+
+//PREFERENSI EMAIL
+const saveEmailPref =
+document.getElementById("saveEmailPref");
+
+if(saveEmailPref){
+
+    saveEmailPref.addEventListener("click", () => {
+
+        alert("Preferensi email berhasil disimpan.");
+
+    });
+
+}
+
+//WISHLIST
+const removeButtons =
+document.querySelectorAll(".btn-remove");
+
+removeButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const item =
+        button.closest(".wishlist-item");
+
+        item.remove();
+
+        alert("Produk dihapus dari wishlist.");
+
+    });
+
+});
+
+//DELETE AKUN
+const deleteBtn =
+document.getElementById("deleteAccountBtn");
+
+if(deleteBtn){
+
+    deleteBtn.addEventListener("click", () => {
+
+        const confirmDelete =
+        document.getElementById("confirmDelete");
+
+        if(!confirmDelete.checked){
+
+            alert(
+                "Silakan centang konfirmasi terlebih dahulu."
+            );
+
+            return;
+        }
+
+        const result = confirm(
+            "Apakah Anda yakin ingin menghapus akun ini?"
+        );
+
+        if(result){
+
+            alert(
+                "Permohonan penghapusan akun telah dikirim."
+            );
+
+        }
+
+    });
+
+}

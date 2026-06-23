@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartu Saya - NEXORA</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../assets/css/profile.css">
+</head>
+<body>
+
+<div class="container-fluid py-4">
+    <div class="row">
+
+        <!-- Sidebar -->
+        <div class="col-lg-3 mb-4">
+            <div class="sidebar">
+
+                <div class="sidebar-header">
+                    AKUN SAYA
+                </div>
+
+                <ul class="sidebar-menu">
+                    <li><a href="profile.html">Informasi Account</a></li>
+                    <li><a href="wallet.html">Wallet</a></li>
+                    <li><a href="lacak-pesanan.html">Lacak Pesanan</a></li>
+                    <li><a href="ulasan.html">Ulasan Saya</a></li>
+                    <li><a href="kartusaya.html" class="active">Kartu Saya</a></li>
+                    <li><a href="preferensiemail.html">Preferensi Email</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="deleteakun.html">Permohonan Penghapusan Akun</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-9">
+
+            <div class="card-box">
+
+                <div class="card-header-custom">
+                    <div>
+                        <i class="bi bi-credit-card"></i>
+                        Kartu Saya
+                    </div>
+
+                    <button class="btn-dark-custom" id="btnTambahKartu">
+                        Tambah Kartu
+                    </button>
+                </div>
+
+                <!-- Kartu Tersimpan -->
+                <div class="payment-card">
+
+                    <div class="card-top">
+                        <span>VISA</span>
+                        <i class="bi bi-credit-card-2-front"></i>
+                    </div>
+
+                    <div class="card-number">
+                        **** **** **** 4589
+                    </div>
+
+                    <div class="card-bottom">
+                        <div>
+                            <small>PEMILIK KARTU</small>
+                            <p>VALENTIO S. PRASETIYA</p>
+                        </div>
+
+                        <div>
+                            <small>BERLAKU HINGGA</small>
+                            <p>12/29</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Kartu Kedua -->
+                <div class="payment-card mastercard-card">
+
+                    <div class="card-top">
+                        <span>MASTERCARD</span>
+                        <i class="bi bi-credit-card-2-front"></i>
+                    </div>
+
+                    <div class="card-number">
+                        **** **** **** 7621
+                    </div>
+
+                    <div class="card-bottom">
+                        <div>
+                            <small>PEMILIK KARTU</small>
+                            <p>VALENTIO S. PRASETIYA</p>
+                        </div>
+
+                        <div>
+                            <small>BERLAKU HINGGA</small>
+                            <p>08/28</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="../assets/js/profile.js"></script>
+
+</body>
+</html>

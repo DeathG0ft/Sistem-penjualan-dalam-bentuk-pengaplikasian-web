@@ -267,3 +267,191 @@ body{
     }
 
 }
+
+/* =========================
+   KARTU SAYA
+========================= */
+/* Review */
+
+.payment-card{
+    background:linear-gradient(135deg,#1f1f1f,#444);
+    color:white;
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:20px;
+}
+
+.mastercard-card{
+    background:linear-gradient(135deg,#0d6efd,#003b8e);
+}
+
+.card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:20px;
+    margin-bottom:35px;
+}
+
+.card-number{
+    font-size:24px;
+    letter-spacing:3px;
+    margin-bottom:30px;
+}
+
+.card-bottom{
+    display:flex;
+    justify-content:space-between;
+}
+
+.card-bottom small{
+    opacity:.7;
+    font-size:12px;
+}
+
+.card-bottom p{
+    margin:0;
+    font-weight:600;
+}
+
+@media(max-width:768px){
+
+    .card-number{
+        font-size:18px;
+    }
+
+    .card-bottom{
+        flex-direction:column;
+        gap:10px;
+    }
+
+}
+
+/* =========================
+   PREFERENSI EMAIL
+========================= */
+/* Review */
+
+.email-option{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+    border-bottom:1px solid #ececec;
+}
+
+.email-option:last-child{
+    border-bottom:none;
+}
+
+.email-option h6{
+    margin-bottom:4px;
+}
+
+.email-option small{
+    color:#777;
+}
+
+.form-check-input{
+    width:50px;
+    height:25px;
+}
+
+@media(max-width:768px){
+
+    .email-option{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+}
+
+/* =========================
+   WISHLIST
+========================= */
+/* Review */
+
+.wishlist-item{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:20px 0;
+    border-bottom:1px solid #ececec;
+}
+
+.wishlist-item:last-child{
+    border-bottom:none;
+}
+
+.wishlist-item img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.wishlist-info{
+    flex:1;
+}
+
+.wishlist-info p{
+    color:#777;
+    margin:8px 0;
+}
+
+.wishlist-info h6{
+    font-weight:700;
+}
+
+.wishlist-action{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+@media(max-width:768px){
+
+    .wishlist-item{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .wishlist-action{
+        width:100%;
+    }
+
+    .wishlist-action button{
+        width:100%;
+    }
+
+}
+
+/* =========================
+   DELETE AKUN
+========================= */
+/* Review */
+
+.delete-warning{
+    background:#fff3f3;
+    border:1px solid #ffcaca;
+    border-radius:12px;
+    padding:20px;
+}
+
+.delete-warning h5{
+    color:#dc3545;
+    margin-bottom:15px;
+}
+
+.delete-warning p{
+    margin-bottom:15px;
+}
+
+.delete-warning ul{
+    margin-bottom:0;
+}
+
+.delete-warning li{
+    margin-bottom:8px;
+}
