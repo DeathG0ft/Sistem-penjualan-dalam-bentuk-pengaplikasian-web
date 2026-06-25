@@ -1,584 +1,132 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - NEXORA BLACK BOOM</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Poppins',sans-serif;
-        }
-
-        body{
-            background:linear-gradient(135deg,#0f172a,#1e293b);
-            color:#fff;
-            min-height:100vh;
-        }
-
-        .checkout-container{
-            width:90%;
-            max-width:1100px;
-            margin:50px auto;
-            background:#1f2937;
-            border-radius:20px;
-            overflow:hidden;
-            box-shadow:0 20px 40px rgba(0,0,0,.4);
-        }
-
-        .product-image{
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            min-height:650px;
-        }
-
-        .content{
-            padding:40px;
-        }
-
-        h2{
-            font-weight:700;
-            margin-bottom:10px;
-        }
-
-        .desc{
-            color:#cbd5e1;
-            margin-bottom:20px;
-        }
-
-        .price{
-            color:#00d084;
-            font-size:35px;
-            font-weight:bold;
-        }
-
-        hr{
-            margin:25px 0;
-            border-color:#475569;
-        }
-
-        label{
-            margin-bottom:8px;
-            font-weight:500;
-        }
-
-        .form-control,
-        .form-select{
-
-            background:#374151 !important;
-            color:#fff !important;
-            border:none;
-            border-radius:10px;
-            padding:12px;
-
-        }
-
-        .form-control::placeholder{
-            color:#ccc;
-        }
-
-        .summary{
-
-            background:#111827;
-            border-radius:15px;
-            padding:20px;
-            margin-top:20px;
-
-        }
-
-        .summary h4{
-            margin-bottom:20px;
-        }
-
-        .summary p{
-            display:flex;
-            justify-content:space-between;
-            margin-bottom:12px;
-        }
-
-        .summary h3{
-
-            display:flex;
-            justify-content:space-between;
-            color:#00d084;
-
-        }
-
-        .btn-buy{
-
-            margin-top:25px;
-            width:100%;
-            background:#00d084;
-            border:none;
-            color:white;
-            padding:15px;
-            border-radius:12px;
-            font-size:18px;
-            font-weight:bold;
-            transition:.3s;
-
-        }
-
-        .btn-buy:hover{
-
-            background:#00b874;
-
-        }
-
-        .modal-content{
-
-            background:#111827;
-            color:white;
-            border-radius:20px;
-
-        }
-
-        .modal-header,
-        .modal-footer{
-
-            border-color:#374151;
-
-        }
-
-        #countdown{
-
-            font-size:22px;
-            color:#ffc107;
-            font-weight:bold;
-
-        }
-
-        .success{
-
-            display:none;
-
-        }
-
-        .success i{
-
-            font-size:70px;
-            color:#00d084;
-
-        }
-
-        @media(max-width:768px){
-
-            .product-image{
-
-                min-height:350px;
-
-            }
-
-            .content{
-
-                padding:25px;
-
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXORA Checkout Monochrome</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,Arial,sans-serif}
+body{
+background:linear-gradient(135deg,#0b0b0b,#181818,#2b2b2b);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+color:#fff;
+min-height:100vh;
+}
+@keyframes bg{
+0%{background-position:0 50%}
+50%{background-position:100% 50%}
+100%{background-position:0 50%}
+}
+.checkout-container{
+max-width:1150px;
+margin:50px auto;
+background:rgba(20,20,20,.95);
+border:1px solid rgba(255,255,255,.08);
+border-radius:24px;
+overflow:hidden;
+box-shadow:0 25px 60px rgba(0,0,0,.5);
+backdrop-filter:blur(15px)
+}
+.left{background:#111;padding:25px;display:flex;align-items:center;justify-content:center}
+.product-image{width:100%;max-width:470px;transition:.45s;filter:drop-shadow(0 10px 30px rgba(255,255,255,.08))}
+.product-image:hover{transform:scale(1.05)}
+.content{padding:40px}
+.badge-premium{display:inline-block;background:#fff;color:#111;padding:8px 18px;border-radius:50px;font-size:12px;font-weight:bold;margin-bottom:15px}
+.rating{color:#d9d9d9;margin:8px 0 18px}
+.desc{color:#bcbcbc}
+.price{font-size:42px;font-weight:700;margin:18px 0}
+.form-control,.form-select{background:#222!important;border:1px solid #444;color:#fff!important;border-radius:12px;padding:14px}
+.form-control:focus,.form-select:focus{background:#191919!important;border-color:#fff;box-shadow:0 0 10px rgba(255,255,255,.15)}
+.summary{background:#141414;border:1px solid #333;border-radius:18px;padding:22px;margin-top:20px}
+.summary .row{padding:6px 0;color:#ddd}
+.total{font-size:28px;font-weight:bold}
+.btn-buy{width:100%;margin-top:20px;background:#fff;color:#111;padding:16px;border:none;border-radius:14px;font-weight:bold;transition:.3s}
+.btn-buy:hover{background:#d9d9d9;transform:translateY(-3px)}
+.modal-content{background:#171717;color:#fff;border:1px solid #333;border-radius:20px}
+#countdown{font-size:28px;font-weight:bold}
+.success{display:none}
+</style>
 </head>
-
 <body>
-
 <div class="container py-5">
-
 <div class="checkout-container">
-
 <div class="row g-0">
-
-<div class="col-lg-5">
-
-<img src="../assets/foto/NEXORA BLACK BOOM.png">
-
+<div class="col-lg-5 left">
+<img class="product-image" src="../assets/foto/NEXORA BLACK BOOM.png">
 </div>
-
 <div class="col-lg-7">
-
 <div class="content">
-
+<span class="badge-premium">OFFICIAL STORE</span>
 <h2>NEXORA BLACK BOOM</h2>
-
-<p class="desc">
-
-Sepatu premium dengan desain modern, ringan,
-nyaman dipakai untuk olahraga maupun aktivitas sehari-hari.
-
-</p>
-
-<div class="price">
-
-Rp 250.000
-
-</div>
-
-<hr>
-
-<div class="mb-3">
-
-<label>Nama Lengkap</label>
-
-<input
-type="text"
-class="form-control"
-placeholder="Masukkan nama">
-
-</div>
-
-<div class="mb-3">
-
-<label>Nomor HP</label>
-
-<input
-type="text"
-class="form-control"
-placeholder="08xxxxxxxxxx">
-
-</div>
-
-<div class="mb-3">
-
-<label>Alamat Lengkap</label>
-
-<textarea
-rows="3"
-class="form-control"
-placeholder="Masukkan alamat"></textarea>
-
-</div>
-
+<div class="rating">★★★★★ 4.9 (327 Reviews)</div>
+<p class="desc">Sepatu premium dengan desain minimalis, ringan dan nyaman digunakan untuk olahraga maupun aktivitas harian.</p>
+<div class="price">Rp <span id="hargaLabel">250.000</span></div>
+<div class="mb-3"><label>Nama Lengkap</label><input class="form-control"></div>
+<div class="mb-3"><label>Nomor HP</label><input class="form-control"></div>
+<div class="mb-3"><label>Alamat</label><textarea class="form-control"></textarea></div>
 <div class="row">
-
-    <div class="col-md-6 mb-3">
-
-        <label>Ukuran</label>
-
-        <select class="form-select">
-
-            <option>39</option>
-            <option>40</option>
-            <option selected>41</option>
-            <option>42</option>
-            <option>43</option>
-            <option>44</option>
-
-        </select>
-
-    </div>
-
-    <div class="col-md-6 mb-3">
-
-        <label>Jumlah</label>
-
-        <input
-        type="number"
-        id="qty"
-        class="form-control"
-        value="1"
-        min="1">
-
-    </div>
-
+<div class="col-md-6"><label>Ukuran</label><select class="form-select"><option>39</option><option>40</option><option selected>41</option><option>42</option><option>43</option></select></div>
+<div class="col-md-6"><label>Jumlah</label><input id="qty" type="number" min="1" value="1" class="form-control"></div>
 </div>
-
-<div class="mb-3">
-
-<label>Metode Pembayaran</label>
-
-<select
-id="payment"
-class="form-select">
-
-    <option>Transfer Bank</option>
-    <option>QRIS</option>
-    <option>E-Wallet</option>
-    <option>COD</option>
-
-</select>
-
-</div>
-
+<div class="mt-3"><label>Pembayaran</label><select id="payment" class="form-select"><option>Transfer Bank</option><option>QRIS</option><option>E-Wallet</option><option>COD</option></select></div>
 <div class="summary">
-
-<h4>Ringkasan Pesanan</h4>
-
-<p>
-
-<span>Harga</span>
-
-<span>Rp 250.000</span>
-
-</p>
-
-<p>
-
-<span>Jumlah</span>
-
-<span id="qtyText">1</span>
-
-</p>
-
-<hr>
-
-<h3>
-
-<span>Total</span>
-
-<span id="total">
-
-250000
-
-</span>
-
-</h3>
-
+<h5>Ringkasan Pesanan</h5>
+<div class="d-flex justify-content-between row"><span>Subtotal</span><span id="sub">Rp250.000</span></div>
+<div class="d-flex justify-content-between row"><span>Ongkir</span><span>Gratis</span></div>
+<div class="d-flex justify-content-between row"><span>Diskon</span><span>-</span></div><hr>
+<div class="d-flex justify-content-between total"><span>Total</span><span>Rp <span id="total">250.000</span></span></div>
 </div>
+<button class="btn-buy" id="buyBtn">BAYAR SEKARANG</button>
+</div></div></div></div></div>
 
-<button
-id="buyBtn"
-class="btn-buy">
-
-Bayar Sekarang
-
-</button>
-
+<div class="modal fade" id="payModal"><div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+<div class="modal-header"><h5 id="title">Pembayaran</h5><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+<div class="modal-body">
+<div id="bodyContent"></div>
+<div class="success text-center"><h2>✔</h2><h4>Pembayaran Berhasil</h4><p>Terima kasih telah berbelanja di NEXORA.</p></div>
 </div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =======================
-     MODAL QRIS
-======================== -->
-
-<div
-class="modal fade"
-id="qrisModal"
-tabindex="-1">
-
-<div class="modal-dialog modal-dialog-centered">
-
-<div class="modal-content">
-
-<div class="modal-header">
-
-<h5 class="modal-title">
-
-Pembayaran QRIS
-
-</h5>
-
-<button
-class="btn-close btn-close-white"
-data-bs-dismiss="modal">
-</button>
-
-</div>
-
-<div class="modal-body text-center">
-
-<div class="payment-content">
-
-<h5>Scan QR Berikut</h5>
-
-<img
-src="../assets/foto/KODEbayar.png"
-class="img-fluid rounded shadow my-3"
-style="max-width:250px;">
-
-<h4 class="text-success">
-
-Rp
-<span id="modalTotal">
-
-250000
-
-</span>
-
-</h4>
-
-<p class="mt-3">
-
-Batas waktu pembayaran
-
-</p>
-
-<div id="countdown">
-
-15:00
-
-</div>
-
-</div>
-
-<div class="success text-center">
-
-<div
-style="font-size:70px;">
-
-✅
-
-</div>
-
-<h3 class="mt-3">
-
-Pembayaran Berhasil
-
-</h3>
-
-<p>
-
-Terima kasih telah berbelanja di
-<strong>NEXORA</strong>
-
-</p>
-
-</div>
-
-</div>
-
-<div class="modal-footer">
-
-<button
-class="btn btn-success"
-id="doneBtn">
-
-Saya Sudah Bayar
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+<div class="modal-footer"><button class="btn btn-light" id="done">Saya Sudah Bayar</button></div>
+</div></div></div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
-
-const harga = 250000;
-
-const qty = document.getElementById("qty");
-const qtyText = document.getElementById("qtyText");
-const total = document.getElementById("total");
-const modalTotal = document.getElementById("modalTotal");
-
-function formatRupiah(angka){
-    return angka.toLocaleString("id-ID");
+const harga=250000;
+const qty=document.getElementById('qty');
+const total=document.getElementById('total');
+const sub=document.getElementById('sub');
+const modal=new bootstrap.Modal(document.getElementById('payModal'));
+const bodyContent=document.getElementById('bodyContent');
+function rupiah(n){return n.toLocaleString('id-ID')}
+function update(){let q=Math.max(1,parseInt(qty.value)||1);qty.value=q;let t=q*harga;total.innerHTML=rupiah(t);sub.innerHTML='Rp'+rupiah(t);}
+qty.oninput=update;update();
+document.getElementById('buyBtn').onclick=()=>{
+let m=document.getElementById('payment').value;
+document.querySelector('.success').style.display='none';
+bodyContent.style.display='block';
+document.getElementById('done').style.display='inline-block';
+document.getElementById('title').innerText=m;
+if(m==='QRIS'){
+bodyContent.innerHTML='<p class="text-center">Scan QRIS</p><img src="../assets/foto/KODEbayar.png" class="img-fluid rounded"><div class="text-center mt-3">Total Rp '+total.innerHTML+'</div><div id="countdown" class="text-center mt-3">15:00</div>';start();
+}else if(m==='Transfer Bank'){
+bodyContent.innerHTML='<b>BCA</b><br>1234567890<br>a.n NEXORA<br><hr><b>Mandiri</b><br>9876543210<br>a.n NEXORA';
+}else if(m==='E-Wallet'){
+bodyContent.innerHTML='<b>DANA</b> : 08123456789<hr><b>OVO</b> : 08123456789<hr><b>GoPay</b> : 08123456789';
+}else{
+bodyContent.innerHTML='<p>Pembayaran dilakukan saat barang diterima.<br>Estimasi pengiriman 2-4 hari.</p>';
 }
-
-function updateTotal(){
-
-    let jumlah = parseInt(qty.value);
-
-    if(isNaN(jumlah) || jumlah < 1){
-        jumlah = 1;
-        qty.value = 1;
-    }
-
-    let hasil = harga * jumlah;
-
-    qtyText.innerHTML = jumlah;
-
-    total.innerHTML = formatRupiah(hasil);
-
-    modalTotal.innerHTML = formatRupiah(hasil);
-
+modal.show();
 }
-
-qty.addEventListener("input", updateTotal);
-
-updateTotal();
-
-const modal = new bootstrap.Modal(
-    document.getElementById("qrisModal")
-);
-
-document.getElementById("buyBtn").addEventListener("click", function(){
-
-    let metode = document.getElementById("payment").value;
-
-    if(metode == "QRIS"){
-
-        document.querySelector(".payment-content").style.display = "block";
-        document.querySelector(".success").style.display = "none";
-        document.getElementById("doneBtn").style.display = "inline-block";
-
-        startCountdown();
-
-        modal.show();
-
-    }else{
-
-        alert("Pesanan berhasil dibuat menggunakan " + metode);
-
-    }
-
-});
-
-document.getElementById("doneBtn").addEventListener("click", function(){
-
-    document.querySelector(".payment-content").style.display = "none";
-
-    document.querySelector(".success").style.display = "block";
-
-    this.style.display = "none";
-
-});
-
-let timer;
-
-function startCountdown(){
-
-    clearInterval(timer);
-
-    let waktu = 900;
-
-    timer = setInterval(function(){
-
-        let menit = Math.floor(waktu / 60);
-
-        let detik = waktu % 60;
-
-        document.getElementById("countdown").innerHTML =
-            String(menit).padStart(2,"0")
-            + ":"
-            + String(detik).padStart(2,"0");
-
-        if(waktu <= 0){
-
-            clearInterval(timer);
-
-            document.getElementById("countdown").innerHTML =
-            "QRIS Kedaluwarsa";
-
-        }
-
-        waktu--;
-
-    },1000);
-
+document.getElementById('done').onclick=()=>{
+bodyContent.style.display='none';
+document.querySelector('.success').style.display='block';
+document.getElementById('done').style.display='none';
 }
-
+let tm;
+function start(){
+clearInterval(tm);let s=900;
+tm=setInterval(()=>{let m=Math.floor(s/60),d=s%60;let c=document.getElementById('countdown');if(c)c.innerHTML=String(m).padStart(2,'0')+':'+String(d).padStart(2,'0');if(s--<=0){clearInterval(tm);if(c)c.innerHTML='Expired';}},1000);
+}
 </script>
-
-</body>
-</html>
+</body></html>
