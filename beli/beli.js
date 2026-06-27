@@ -1,4 +1,4 @@
-const HARGA = 250000;
+const HARGA = parseInt(document.body.dataset.harga, 10) || 250000;
 
 const qtyInput = document.getElementById('qty');
 const totalEl = document.getElementById('total');
